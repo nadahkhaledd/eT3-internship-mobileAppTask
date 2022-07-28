@@ -1,4 +1,5 @@
 import 'package:et3_task_mobileapp/item.dart';
+import 'package:et3_task_mobileapp/itemPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -15,8 +16,17 @@ class coffeeItem extends StatelessWidget
         Stack(
           alignment: Alignment.topRight,
           children: [
-            Image.asset(coffeeitem.img, fit: BoxFit.contain,
-            height: MediaQuery.of(context).size.height*1/4, width: MediaQuery.of(context).size.width*1/1.8,),
+            InkWell(
+              child: Image.asset(coffeeitem.img, fit: BoxFit.contain,
+              height: MediaQuery.of(context).size.height*1/4, width: MediaQuery.of(context).size.width*1/1.8,),
+
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => itemPage(coffeeitem)),
+                );
+              },
+            ),
 
             RawMaterialButton(
               onPressed: () {},
