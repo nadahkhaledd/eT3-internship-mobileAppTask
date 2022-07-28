@@ -16,15 +16,17 @@ class coffeeItem extends StatelessWidget
           alignment: Alignment.topRight,
           children: [
             Image.asset(coffeeitem.img, fit: BoxFit.contain,
-              height: MediaQuery.of(context).size.height*1/4, width: MediaQuery.of(context).size.width*1/1.6,),
-            FloatingActionButton(
-              backgroundColor: Colors.grey[400],
-              mini: true,
-              child: SvgPicture.asset("assets/icons/heart.svg", color: Colors.white,),
-              onPressed: (){
+            height: MediaQuery.of(context).size.height*1/4, width: MediaQuery.of(context).size.width*1/1.8,),
 
-              },
+            RawMaterialButton(
+              onPressed: () {},
+              elevation: 2.0,
+              fillColor: Colors.grey[350],
+              child: SvgPicture.asset("assets/icons/heart.svg", color: Colors.black, height: 19, width: 19,),
+              padding: EdgeInsets.all(9),
+              shape: CircleBorder(),
             )
+
           ],
         ),
 

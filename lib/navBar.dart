@@ -69,7 +69,9 @@ class _navBarState extends State<navBar> {
                 child: Padding(
                   padding: const EdgeInsets.all(13),
                   child: SvgPicture.asset('assets/icons/heart.svg',color: Colors.white,),
-                )),),
+                )
+              )
+            ),
             icon: SizedBox(height:20 ,child: SvgPicture.asset('assets/icons/heart.svg', color: Colors.grey,),),
             label: ''
           ),

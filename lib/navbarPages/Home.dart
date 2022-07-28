@@ -2,6 +2,7 @@ import 'package:et3_task_mobileapp/coffeeItem.dart';
 import 'package:et3_task_mobileapp/item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
 class Home extends StatelessWidget
@@ -70,6 +71,25 @@ class Home extends StatelessWidget
             //   ),
             // ),
 
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    height: 55, width: 55,
+                    decoration: const BoxDecoration(
+                        color: Colors.orangeAccent,
+                        borderRadius: BorderRadius.all(Radius.circular(19))
+                    ),
+                    child: Center(
+                      child: SvgPicture.asset("assets/icons/search.svg", color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
             const Padding(
               padding: EdgeInsets.only(top: 20),
               child: Text("Coffee products", style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500), textAlign: TextAlign.start,),
@@ -82,6 +102,7 @@ class Home extends StatelessWidget
                     shrinkWrap: true,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
+                      crossAxisSpacing: 5,
                       mainAxisExtent: 300,
                     ),
                     itemCount: items.length,
