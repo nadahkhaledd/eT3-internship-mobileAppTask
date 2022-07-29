@@ -1,16 +1,20 @@
 # et3_task_mobileapp
 
-A new Flutter project.
+Coffee Shop Mobile App Task for the eT3 internship
 
-## Getting Started
+- Technologies Used:
+> Flutter  
 
-This project is a starting point for a Flutter application.
+##
+- *Pages:*  
+###
+![home](https://user-images.githubusercontent.com/63652516/181775034-f7a1c8dd-5841-4061-93d9-65727ef0850d.PNG)
+![second](https://user-images.githubusercontent.com/63652516/181775426-df6afc06-1ea4-459b-ae07-5a995b147ed6.PNG)
 
-A few resources to get you started if this is your first Flutter project:
+##
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- *Video:*  
+###  
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://user-images.githubusercontent.com/63652516/181775587-e10fd226-b3f2-4bc5-ae83-ed054ae75d73.mp4
+
