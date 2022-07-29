@@ -8,10 +8,10 @@ import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 class Home extends StatelessWidget
 {
   List<item> items = [
-    item(img: "assets/images/image1.png", name: "Coffee", address: "New Cairo, Egypt", rate: 4.4, reviews: 429),
-    item(img: "assets/images/image2.png", name: "Coffee", address: "New Cairo, Egypt", rate: 4.4, reviews: 429),
-    item(img: "assets/images/image3.png", name: "Coffee", address: "New Cairo, Egypt", rate: 4.4, reviews: 429),
-    item(img: "assets/images/image4.png", name: "Coffee", address: "New Cairo, Egypt", rate: 4.4, reviews: 429),
+    item(img: "assets/images/image1.png", name: "Coffee", address: "New Cairo, Egypt", rate: 4.4, reviews: 429, ifFav: true),
+    item(img: "assets/images/image2.png", name: "Coffee", address: "New Cairo, Egypt", rate: 4.4, reviews: 429, ifFav: false),
+    item(img: "assets/images/image3.png", name: "Coffee", address: "New Cairo, Egypt", rate: 4.4, reviews: 429, ifFav: false),
+    item(img: "assets/images/image4.png", name: "Coffee", address: "New Cairo, Egypt", rate: 4.4, reviews: 429, ifFav: false),
   ];
   @override
   Widget build(BuildContext context) {
