@@ -15,106 +15,100 @@ class Home extends StatelessWidget
   ];
   @override
   Widget build(BuildContext context) {
-    // final _isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    // final actions = [
-    //   FloatingSearchBarAction(
-    //     showIfOpened: false,
-    //     child: CircularButton(
-    //       icon: const Icon(Icons.place),
-    //       onPressed: () {},
-    //     ),
-    //   ),
-    //   FloatingSearchBarAction.searchToClear(
-    //     showIfClosed: false,
-    //   ),
-    // ];
 
     return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.only(top: 40, left: 30, right: 30),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:  [
-                  const Text("Coffee first.\nSchemes later.", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Roboto"),),
-                  Image.asset("assets/images/user.png"),
-                ],
-              ),
-
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 15),
-              //   child: FloatingSearchBar(
-              //     height: 30,
-              //     width: MediaQuery.of(context).size.width*1/3,
-              //     automaticallyImplyBackButton: false,
-              //     controller: FloatingSearchBarController(),
-              //     clearQueryOnClose: true,
-              //     hint: 'search',
-              //     iconColor: Colors.grey,
-              //     transitionDuration: const Duration(milliseconds: 800),
-              //     transitionCurve: Curves.easeInOutCubic,
-              //     physics: const BouncingScrollPhysics(),
-              //     actions: actions,
-              //     debounceDelay: const Duration(milliseconds: 500),
-              //     onQueryChanged: (query){
-              //
-              //     },
-              //     scrollPadding: EdgeInsets.zero,
-              //     transition: CircularFloatingSearchBarTransition(spacing: 16),
-              //     builder: (context, _) {
-              //       return Container();
-              //     },
-              //     body: Container(),
-              //   ),
-              // ),
-
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      height: 55, width: 55,
-                      decoration: const BoxDecoration(
-                          color: Colors.orangeAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(19))
-                      ),
-                      child: Center(
-                        child: SvgPicture.asset("assets/icons/search.svg", color: Colors.white),
-                      ),
-                    ),
+      child: GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.only(top: 40, left: 30, right: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children:  [
+                    const Text("Coffee first.\nSchemes later.", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Roboto"),),
+                    Image.asset("assets/images/user.png"),
                   ],
                 ),
-              ),
 
-              const Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: Text("Coffee products", style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500), textAlign: TextAlign.start,),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height*(0.2)*0.35,
+                        width:MediaQuery.of(context).size.width*0.7,
 
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 15),
-                  child: GridView.builder(
-                    shrinkWrap: true,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 5,
-                      mainAxisExtent: 300,
-                    ),
-                    itemCount: items.length,
-                    itemBuilder: (BuildContext, index){
-                      return coffeeItem(context, items[index]);
-                    },
+                        child: TextField(
+                          cursorColor: Colors.grey[600],
+                          decoration: InputDecoration(
+                            focusColor: Colors.grey,
+                            fillColor: Colors.grey[200],
+                            filled: true,
+                            hoverColor: Colors.grey,
+                            prefixIcon: Icon(Icons.search, color: Colors.grey[600],),
+                            label: Text("Search", style: TextStyle(color: Colors.grey[600]),),
+
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(19),
+                              borderSide: BorderSide(color: Colors.transparent),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(19),
+                              borderSide: BorderSide(color: Colors.transparent),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              gapPadding: 0.0,
+                              borderRadius: BorderRadius.circular(19),
+                              borderSide: BorderSide(color: Colors.transparent),
+                            ),
+                          ),
+                          //autofocus: false,
+                        ),
+                      ),
+                      Container(
+                        height: 55, width: 55,
+                        decoration: const BoxDecoration(
+                            color: Colors.orangeAccent,
+                            borderRadius: BorderRadius.all(Radius.circular(19))
+                        ),
+                        child: Center(
+                          child: SvgPicture.asset("assets/icons/search.svg", color: Colors.white),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
 
-            ],
+                const Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: Text("Coffee products", style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500), textAlign: TextAlign.start,),
+                ),
+
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: GridView.builder(
+                      shrinkWrap: true,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 5,
+                        mainAxisExtent: 300,
+                      ),
+                      itemCount: items.length,
+                      itemBuilder: (BuildContext, index){
+                        return coffeeItem(context, items[index]);
+                      },
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
           ),
         ),
       ),

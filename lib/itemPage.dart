@@ -31,7 +31,7 @@ class itemPage extends StatelessWidget
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 20, top: 8),
-                        child: Text(coffeeitem.name, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),),
+                        child: Text(coffeeitem.name, style: TextStyle(fontSize: 21.5, fontWeight: FontWeight.w500),),
                       ),
 
                       Padding(
@@ -72,6 +72,7 @@ class itemPage extends StatelessWidget
                       Expanded(
                         child: Center(
                           child: FloatingActionButton.extended(
+                            heroTag: "order",
                             isExtended: true,
                             backgroundColor: Colors.orangeAccent,
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15.0))),
@@ -96,6 +97,7 @@ class itemPage extends StatelessWidget
               child: Padding(
                 padding: const EdgeInsets.only(top: 19, left: 16, right: 25, bottom: 25),
                 child: FloatingActionButton(
+                  heroTag: "back",
                   mini: true,
                   backgroundColor: Colors.orangeAccent,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
