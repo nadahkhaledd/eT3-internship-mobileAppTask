@@ -63,7 +63,7 @@ class coffeeItem extends StatelessWidget
 
         Padding(
           padding: const EdgeInsets.only(left: 20, top: 6),
-          child: Text(coffeeitem.address, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),),
+          child: Text(coffeeitem.address, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),),
         )
 
 

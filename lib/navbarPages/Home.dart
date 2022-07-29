@@ -29,76 +29,77 @@ class Home extends StatelessWidget
     //   ),
     // ];
 
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(top: 40, left: 30, right: 30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children:  [
-                const Text("Coffee first.\nSchemes later.", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Roboto"),),
-                Image.asset("assets/images/user.png"),
-              ],
-            ),
-
-            // Padding(
-            //   padding: const EdgeInsets.only(top: 15),
-            //   child: FloatingSearchBar(
-            //     height: 30,
-            //     width: MediaQuery.of(context).size.width*1/3,
-            //     automaticallyImplyBackButton: false,
-            //     controller: FloatingSearchBarController(),
-            //     clearQueryOnClose: true,
-            //     hint: 'search',
-            //     iconColor: Colors.grey,
-            //     transitionDuration: const Duration(milliseconds: 800),
-            //     transitionCurve: Curves.easeInOutCubic,
-            //     physics: const BouncingScrollPhysics(),
-            //     actions: actions,
-            //     debounceDelay: const Duration(milliseconds: 500),
-            //     onQueryChanged: (query){
-            //
-            //     },
-            //     scrollPadding: EdgeInsets.zero,
-            //     transition: CircularFloatingSearchBarTransition(spacing: 16),
-            //     builder: (context, _) {
-            //       return Container();
-            //     },
-            //     body: Container(),
-            //   ),
-            // ),
-
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    height: 55, width: 55,
-                    decoration: const BoxDecoration(
-                        color: Colors.orangeAccent,
-                        borderRadius: BorderRadius.all(Radius.circular(19))
-                    ),
-                    child: Center(
-                      child: SvgPicture.asset("assets/icons/search.svg", color: Colors.white),
-                    ),
-                  ),
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.only(top: 40, left: 30, right: 30),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children:  [
+                  const Text("Coffee first.\nSchemes later.", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Roboto"),),
+                  Image.asset("assets/images/user.png"),
                 ],
               ),
-            ),
 
-            const Padding(
-              padding: EdgeInsets.only(top: 20),
-              child: Text("Coffee products", style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500), textAlign: TextAlign.start,),
-            ),
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 15),
+              //   child: FloatingSearchBar(
+              //     height: 30,
+              //     width: MediaQuery.of(context).size.width*1/3,
+              //     automaticallyImplyBackButton: false,
+              //     controller: FloatingSearchBarController(),
+              //     clearQueryOnClose: true,
+              //     hint: 'search',
+              //     iconColor: Colors.grey,
+              //     transitionDuration: const Duration(milliseconds: 800),
+              //     transitionCurve: Curves.easeInOutCubic,
+              //     physics: const BouncingScrollPhysics(),
+              //     actions: actions,
+              //     debounceDelay: const Duration(milliseconds: 500),
+              //     onQueryChanged: (query){
+              //
+              //     },
+              //     scrollPadding: EdgeInsets.zero,
+              //     transition: CircularFloatingSearchBarTransition(spacing: 16),
+              //     builder: (context, _) {
+              //       return Container();
+              //     },
+              //     body: Container(),
+              //   ),
+              // ),
 
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: GridView.builder(
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      height: 55, width: 55,
+                      decoration: const BoxDecoration(
+                          color: Colors.orangeAccent,
+                          borderRadius: BorderRadius.all(Radius.circular(19))
+                      ),
+                      child: Center(
+                        child: SvgPicture.asset("assets/icons/search.svg", color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              const Padding(
+                padding: EdgeInsets.only(top: 20),
+                child: Text("Coffee products", style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500), textAlign: TextAlign.start,),
+              ),
+
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: GridView.builder(
                     shrinkWrap: true,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
@@ -109,11 +110,12 @@ class Home extends StatelessWidget
                     itemBuilder: (BuildContext, index){
                       return coffeeItem(context, items[index]);
                     },
-                ),
+                  ),
                 ),
               ),
 
-          ],
+            ],
+          ),
         ),
       ),
     );
